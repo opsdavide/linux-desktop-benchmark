@@ -90,6 +90,14 @@ sar -u 1 5
 systemd-analyze
 ```
 
+> **Note:** Steps 2 and 3 are only needed if you encounter a
+> `drm_fb_helper_damage_work` soft lockup on boot. The issue was
+> reproduced on a fresh manual installation; it may not appear on
+> all VirtualBox setups depending on kernel version and display
+> driver configuration.
+
+**Verified with:** LightDM 1.30.0, XFCE 4.18, kernel 6.17.0-22-generic.
+
 **Display configuration:**
 - Disable Hardware 3D Acceleration in VirtualBox VM settings.
 - Disable compositing in XFCE: `Settings > Window Manager Tweaks > Compositor` and uncheck `Enable display compositing`.
